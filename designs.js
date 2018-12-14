@@ -8,7 +8,7 @@ function makeGrid() {
   var width = document.getElementById('inputWidth').value;
   var table = document.getElementById('pixelCanvas');
   
-  // Creat grid:
+  // Create grid:
   table.innerHTML ='';
   var tBody = document.createElement('tBody');
   for (var x = 0; x < height; x++) {
@@ -20,9 +20,13 @@ function makeGrid() {
     }
   tBody.appendChild(tr);
   }
-  table.appendChild(tBody);
-  
-  
-  
+  table.appendChild(tBody); 
 }
 
+// Changing pixel color:
+
+$('body').on('click','td', function() {
+  var color = document.getElementById('colorPicker').value;
+  $(this).css('background-color', color);
+});
+  
